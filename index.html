@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Davinci_dev — Software a tu medida</title>
+<style>
+:root{
+  --bg:#f3f6f4; --surface:#ffffff; --ink:#14201b; --muted:#53645c; --line:#d5ded9;
+  --accent:#0e6b52; --accent-ink:#ffffff; --deep:#0b2f26;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c1512; --surface:#131f1a; --ink:#e8f0ec; --muted:#9bb0a6; --line:#25372f;
+    --accent:#3fcf9f; --accent-ink:#06231a; --deep:#06100d; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c1512; --surface:#131f1a; --ink:#e8f0ec; --muted:#9bb0a6; --line:#25372f;
+  --accent:#3fcf9f; --accent-ink:#06231a; --deep:#06100d; color-scheme:dark;
+}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:700;font-size:1.2rem;letter-spacing:-.01em;text-decoration:none}
+.logo span{color:var(--accent)}
+nav a{margin-left:20px;text-decoration:none;color:var(--muted);font-size:.95rem}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;background:var(--accent);color:var(--accent-ink);font-weight:600;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.hero{padding:72px 0 56px}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.08;letter-spacing:-.03em;margin:0 0 20px;max-width:16ch}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:56ch;margin:0 0 28px}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.features div{padding:28px 24px;border-right:1px solid var(--line)}
+.features div:last-child{border-right:0}
+.features h3{margin:0 0 6px;font-size:1.05rem}
+.features p{margin:0;color:var(--muted);font-size:.95rem}
+.booking{padding:72px 0}
+.booking h2{font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:-.02em;margin:0 0 8px}
+.booking .lead{color:var(--muted);margin:0 0 24px;max-width:60ch}
+.frame{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.alt{margin-top:14px;font-size:.9rem;color:var(--muted)}
+footer{background:var(--deep);color:#cfe0d8;padding:28px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:640px){
+  nav a:not(.btn){display:none}
+  .features div{border-right:0;border-bottom:1px solid var(--line)}
+  .features div:last-child{border-bottom:0}
+  .hero{padding:48px 0 40px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">Davinci<span>_dev</span></a>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a class="btn" href="#reservas" style="margin-left:20px;padding:8px 16px">Reservar cita</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Software en la nube que tu equipo sí usa.</h1>
+      <p>Davinci_dev ofrece soluciones SaaS para gestionar tu negocio sin instalar nada. Agenda una reunión y te mostramos cómo funciona con tus propios datos.</p>
+      <div class="actions">
+        <a class="btn" href="#reservas">Reservar una demo</a>
+        <a class="btn ghost" href="#servicios">Ver qué incluye</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="wrap">
+    <div class="features">
+      <div><h3>Listo en minutos</h3><p>Accede desde el navegador. Sin instalaciones ni servidores propios.</p></div>
+      <div><h3>Suscripción mensual</h3><p>Pagas por lo que usas y cancelas cuando quieras.</p></div>
+      <div><h3>Soporte directo</h3><p>Hablas con el equipo que desarrolla el producto.</p></div>
+    </div>
+  </section>
+
+  <section id="reservas" class="booking">
+    <div class="wrap">
+      <h2>Reserva tu cita</h2>
+      <p class="lead">Elige el día y la hora que prefieras. Recibirás la confirmación por correo.</p>
+      <div class="frame">
+        <!-- Google Calendar Appointment Scheduling begin -->
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ15Ypowp6RSs1exi6i8cIvtzw5MSRvc4PSROXNsoexiyjeXNCpcuYzxRofRW4irYkmvwk4veEqF?gv=true" style="border: 0" width="100%" height="600" frameborder="0" title="Agenda de citas Davinci_dev"></iframe>
+        <!-- end Google Calendar Appointment Scheduling -->
+      </div>
+      <p class="alt">¿No carga el calendario? <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ15Ypowp6RSs1exi6i8cIvtzw5MSRvc4PSROXNsoexiyjeXNCpcuYzxRofRW4irYkmvwk4veEqF?gv=true" target="_blank" rel="noopener">Ábrelo en una pestaña nueva</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Davinci_dev</span><span>Software como servicio</span></div>
+</footer>
+</body>
+</html>
